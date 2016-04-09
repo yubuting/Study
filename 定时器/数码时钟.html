@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background:black; color: white; font-size:50px;">
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+	</body>
+	<script>
+		window.onload = function(){
+			var img = document.getElementsByTagName("img");
+			var str =[1,1,2,2,4,3];
+			for(var i = 0;i<img.length;i++){
+				img[i].src ="img/"+str[i]+".png";
+			}
+		}
+	</script>
+</html>

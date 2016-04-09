@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background:black; color: white; font-size:50px;">
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+	</body>
+	<script>
+			
+			function toZero(){
+				if(arguments[0]<10){
+					return '0'+arguments[0];
+				}
+				else{
+					return ''+arguments[0];
+				}
+			}	
+		window.onload = function(){
+			var img = document.getElementsByTagName("img");	
+				function times(){
+					var dates = new Date();
+				var str =toZero(dates.getHours())+toZero(dates.getMinutes())+toZero(dates.getSeconds());
+			for(var i = 0;i<img.length;i++){
+				img[i].src ="img/"+str[i]+".png";
+				}
+				};
+			setInterval(times,1000);
+				times();//加上这个执行速度增加了很多
+				
+		}
+	</script>
+</html>

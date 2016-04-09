@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="index.css" />
+		<style>
+			#checkboxs{
+				border: 1px solid #ddd;
+				height: 200px;
+				width: 100px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" id="checkbox"/>
+		<div id="checkboxs">
+			这是要显示的部分
+		</div>
+	</body>
+	<script>
+		window.onload = function(){
+		var check = document.getElementById("checkbox");
+		var checkboxs = document.getElementById('checkboxs');
+		function display(id,styles){
+			id.style.display=styles;
+		}
+		check.onmouseover = function(){
+			display(checkboxs,'block');
+			//checkboxs.style.display='block';
+		};
+		
+		check.onmouseout = function(){
+			display(checkboxs,'none');
+		};
+		};
+	</script>
+</html>

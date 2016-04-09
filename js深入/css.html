@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" style="width:200px; height:200px; background:red;">
+
+	</body>
+	<script>
+		window.onload = function(){
+			div1 = document.getElementById("div1");
+			function css(){
+			
+					arguments[0].style[arguments[1]]=arguments[2];
+				}
+			css(div1,"background","yellow");
+			}
+		
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<input type="text" id="text"/>
+		<input type="button" id="btn" value="设置文字"/>
+		<div class="div1" id="div1"></div>
+	</body>
+	<script>
+		var texts = document.getElementById('text');
+		var btn = document.getElementById('btn');
+		var div1 = document.getElementById('div1');
+			div1.style.width = '100px';
+			div1.style.height = '200px';
+			div1.style.backgroundColor = 'red';
+		btn.onclick = function(){
+			div1.innerHTML = texts.value;
+		}
+</script>
+</html>

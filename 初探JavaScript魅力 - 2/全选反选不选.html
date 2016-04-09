@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="all" value="全选"/>
+		<input type="button"  id="no" value="不选"/>
+		<input type="button" id="notall" value="反选"/>
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		
+	</body>
+	<script>
+	
+		var all = document.getElementById('all');
+		var no = document.getElementById('no');
+		var notall = document.getElementById('notall');
+		var inputs = document.getElementsByTagName('input');
+		all.onclick=function(){
+			for(var i=0;i<inputs.length;i++){
+				inputs[i].checked=true;
+			}
+		}
+		no.onclick=function(){
+			for(var i=0;i<inputs.length;i++){
+				inputs[i].checked=false;
+			}
+		}
+		notall.onclick=function(){
+			for(var i=0;i<inputs.length;i++){
+				if(inputs[i].checked==true){
+					inputs[i].checked = false;
+				}else{
+					inputs[i].checked = true;
+				}
+				
+				
+			}
+		}
+	</script>	
+</html>

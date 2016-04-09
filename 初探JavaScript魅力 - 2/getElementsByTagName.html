@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		div{
+			height: 20px;
+			width: 20px;
+			margin-top: 10px;
+		}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<script>
+		window.onload = function(){
+			var div = document.getElementsByTagName("div");
+			for(var i =0 ;i<div.length;i++){
+				div[i].style.backgroundColor ='red';
+			}
+		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.div2{
+			height: 50px;
+			width: 50px;
+			background-color: #FF0000;
+		}
+	</style>
+	<body>
+		<div class="div2" id="div2"></div>
+	</body>
+	<script>
+		var div2 = document.getElementById("div2");
+		div2.onmouseover = function(){
+			styles(this,200,200,'yellow');
+		}
+		div2.onmouseout = function(){
+			styles(this,50,50,'blue');
+		}
+		function styles(thiss,width,height,color){
+			thiss.style.width =width+"px";
+			thiss.style.height =height+"px";
+			thiss.style.backgroundColor =color;
+		}
+	</script>
+</html>
+

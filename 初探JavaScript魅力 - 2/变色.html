@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+	#div1{
+		height: 100px;
+		width: 300px;
+		
+	}
+	</style>
+	<body>
+	    <button id="btn1">btn1</button>
+		<button id="btn2">btn1</button>
+		<button id="btn3">btn1</button>
+	<div id="div1"></div>
+	</body>
+	<script>
+		var div1 =  document.getElementById("div1");
+		var btn1 =  document.getElementById("btn1");
+		var btn2 =  document.getElementById("btn2");
+		var btn3 =  document.getElementById("btn3");
+		/*btn1.onclick = function(){
+			setColor('green');
+		};
+		btn2.onclick = function(){
+			setColor('blue');
+		};
+		btn3.onclick = function(){
+			setColor('yellow');
+		};*/
+		bbb(btn1,'green');
+		bbb(btn2,'blue');
+		bbb(btn3,'yellow');
+		function bbb(aaa,colors){
+		aaa.onclick = function(){
+			setColor(colors);
+		}}
+		function setColor(color){
+			div1.style.backgroundColor = color;
+		};
+	</script>
+</html>

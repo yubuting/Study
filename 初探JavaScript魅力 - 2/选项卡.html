@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.active{
+				background-color: #FF0000;
+			}
+			div{
+				display: none;
+				border: 1px solid #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<button  class="active">1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<div style="display: block;">111</div>
+		<div>222</div>
+		<div>333</div>
+		<div>444</div>
+	</body>
+	<script>
+		btn = document.getElementsByTagName('button');
+		div = document.getElementsByTagName('div');
+		
+		for(var i =0;i< btn.length;i++){
+			btn[i].index = i;
+//			btn[0].index = 0;
+//			btn[1].index = 1;
+//			btn[2].index = 2;
+//			btn[3].index = 3;
+			
+			//alert(btn[i].index);
+			btn[i].onclick = function(){
+					for(var i =0;i< btn.length;i++){
+						btn[i].className='';
+						div[i].style.display = 'none';
+					}
+			this.className ='active';
+			//alert(btn[i].index);
+			div[this.index].style.display='block';
+		}
+		}
+		
+	</script>
+</html>
