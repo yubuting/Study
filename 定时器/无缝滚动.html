@@ -1,38 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
 	<style>
-		* {margin:0; padding:0;}
-#div1 {width:712px; height:108px; margin:100px auto; position:relative; background:red;}
-#div1 ul {position:absolute; left:0; top:0;}
-#div1 ul li {float:left;width:178px; height:108px; list-style:none;}
-
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#div1 {
+			width: 178px;
+			height: 108px;
+			margin: 100px auto;
+			position: relative;
+			background: red;
+			overflow: hidden;
+		}
+		
+		#div1 ul {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		
+		#div1 ul li {
+			float: left;
+			width: 178px;
+			height: 108px;
+			list-style: none;
+		}
 	</style>
+
 	<body>
 		<div id="div1">
 			<ul>
-				<li><img src="img2/1.jpg"/></li>
-				<li><img src="img2/2.jpg"/></li>
-				<li><img src="img2/3.jpg"/></li>
-				<li><img src="img2/4.jpg"/></li>
+				<li><img src="img2/1.jpg" /></li>
+				<li><img src="img2/2.jpg" /></li>
+				<li><img src="img2/3.jpg" /></li>
+				<li><img src="img2/4.jpg" /></li>
 			</ul>
-			
-			
+
 		</div>
+		<button id="right">向右走</button>
+			<button id="left">向左走</button>
 	</body>
 	<script>
-		window.onload = function(){
+		window.onload = function() {
 			var div = document.getElementById("div1");
 			var ul = document.getElementsByTagName('ul')[0];
 			var li = ul.getElementsByTagName("li");
-			ul.innerHTML = ul.innerHTML+ul.innerHTML;
-			ul.style.width = li[0].offsetWidth*li.length+"px";
-			setInterval(function(){
-				ul.style.left = ul.offsetLeft-2+"px";
-			},30);
+			ul.innerHTML = ul.innerHTML + ul.innerHTML;
+			ul.style.width = li[0].offsetWidth * li.length + "px";
+			var speed = -2;
+			function move() {
+				if (ul.offsetLeft < -ul.offsetWidth / 2) {
+					ul.style.left = '0';
+				}
+				if (ul.offsetLeft > 0) {
+					ul.style.left = -ul.offsetWidth / 2 + "px";
+				}
+				ul.style.left = ul.offsetLeft + speed + "px";
+			}
+			var timer = setInterval(move,30);
+			ul.onmouseover = function() {
+				clearInterval(timer);
+			}
+			ul.onmouseout = function() {
+				timer = setInterval(move, 30);
+			}
+			document.getElementById('left').onclick = function(){
+				speed = -2;
+			}
+			document.getElementById('right').onclick = function(){
+				speed = 2;
+			}
 		}
 	</script>
+
 </html>
