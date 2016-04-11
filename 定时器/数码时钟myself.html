@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background:black; color: white; font-size:50px;">
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+	</body>
+	<script>
+		window.onload = function(){
+			var imgs = document.getElementsByTagName("img");
+	
+			function toZero (){
+				if(arguments[0]<10){
+					arguments[0] = '0'+arguments[0];
+					return arguments[0];
+				}else{
+					arguments[0] = ''+arguments[0];
+					return arguments[0];
+				}
+			}
+
+			 function timer(){
+				var dates = new Date();
+				var times = toZero(dates.getHours())+toZero(dates.getMinutes())+toZero(dates.getSeconds());
+			
+				for(i=0;i<imgs.length;i++){
+					imgs[i].src = 'img/'+times[i]+'.png';
+				}
+			}
+			 
+		setInterval(timer,1000);
+			timer();
+		}
+	</script>
+</html>

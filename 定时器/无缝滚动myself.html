@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#div1 {
+			width: 712px;
+			height: 108px;
+			margin: 100px auto;
+			position: relative;
+			background: red;
+			overflow: hidden;
+		}
+		#div1 ul {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#div1 ul li {
+			float: left;
+			width: 178px;
+			height: 108px;
+			list-style: none;
+		}
+	</style>
+
+	<body>
+		<div id="div1">
+			<ul>
+				<li><img src="img2/1.jpg" /></li>
+				<li><img src="img2/2.jpg" /></li>
+				<li><img src="img2/3.jpg" /></li>
+				<li><img src="img2/4.jpg" /></li>
+			</ul>
+
+		</div>
+		<button id="right">向右走</button>
+			<button id="left">向左走</button>
+	</body>
+	<script>
+		window.onload = function() {
+		var ul = document.getElementsByTagName("ul")[0];
+		var lis = document.getElementsByTagName("li");
+		ul.innerHTML=ul.innerHTML+ul.innerHTML;
+		ul.style.width=lis[0].offsetWidth*lis.length+'px';
+		var speed = 6;
+		function move(){
+			if(ul.offsetLeft<-parseInt(ul.style.width)/2){
+				ul.style.left ="0";
+			}
+			if(ul.offsetLeft>0){
+					ul.style.left =-ul.offsetWidth/2+'px';
+			}
+			ul.style.left = ul.offsetLeft+speed+'px';
+		}
+		timer = setInterval(move,30);
+		ul.onmouseover = function(){
+			clearInterval(timer);
+		}
+		ul.onmouseout = function(){
+			timer =setInterval(move,30);
+		}
+	
+		var left = document.getElementById('left');
+		var right = document.getElementById("right");
+		left.onclick = function(){
+			speed = 6;
+		}
+		right.onclick = function(){
+			speed =-6;
+		}
+		}
+	</script>
+
+</html>
