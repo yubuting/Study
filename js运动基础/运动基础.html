@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+#div1 {width:200px; height:200px; background:red; position:absolute; top:50px; left:0px;}
+</style>
+
+	<body>
+		<input id="btn1" type="button" value="开始运动" onclick="startMove()" />
+<div id="div1">
+</div>
+
+	</body>
+	<script>
+	var timer = null;
+		document.getElementById('btn1').onclick = function(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				if(document.getElementById('div1').offsetLeft>300){
+					clearInterval(timer);
+				}
+			
+				document.getElementById('div1').style.left=document.getElementById('div1').offsetLeft+5+'px';
+			},30);
+		}
+	</script>
+</html>

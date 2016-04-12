@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#div1 {width:200px; height:200px; background:red; filter:alpha(opacity:30); opacity:0.3;}
+
+	</style>
+	<body>
+		<div id="div1"></div>
+
+	</body>
+	<script>
+	window.onload = function(){
+		var div1 = document.getElementById('div1');
+		div1.onmouseover = function(){
+			starMove(100);
+		}
+		div1.onmouseout = function(){
+			starMove(30);
+		}
+	}
+	var alpha = 30;
+	var timer = null;
+	var speed = 0;
+	function starMove(value){	
+		clearInterval(timer);
+		timer = setInterval(function(){
+			if(alpha<value){
+				speed = 10;
+			}else{
+				speed = -10;
+			}
+			if(alpha==value){
+				clearInterval(timer);
+			}else{
+				alpha+=speed;
+			}
+			div1.style.filter='alpha(opacity:'+alpha+')';
+			div1.style.opacity=alpha/100;
+		},30)
+	}
+	
+	
+	
+	/*	window.onload = function(){
+			var oDiv = document.getElementById('div1');
+			oDiv.onmouseover = function(){
+				starMove(100);
+			}
+			oDiv.onmouseout= function(){
+				starMove(30);
+			}
+		}
+		var alpha = 30;
+		var timer =null;
+		function starMove(iTarget){
+			var oDiv = document.getElementById('div1');
+			clearInterval(timer);
+			timer = setInterval(function(){
+				var speed = 0;
+				if(alpha<iTarget){
+					speed = 10;
+				}else{
+					speed = -10;
+				}
+				if(iTarget==alpha){
+					clearInterval(timer);
+				}else{
+					alpha+=speed;
+				}
+				oDiv.style.filter='alpha(opacity:'+alpha+')';
+				oDiv.style.opacity = alpha/100;
+			},30);
+		}*/
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+#ul1 {background:green;}
+#ul2 {background:yellow;}
+</style>
+	<body>
+	<ul id="ul1">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+<input id="btn1" type="button" value="移动" />
+<ul id="ul2">
+</ul>
+	</body>
+	<script>
+	window.onload=function ()
+{
+
+	var ul1  = document.getElementById('ul1');
+	var ul2 = document.getElementById('ul2');
+		var btn  = document.getElementById('btn1');
+		btn.onclick = function(){
+			var oLi=ul1.children[0];
+			ul1.removeChild(oLi);
+			ul2.appendChild(oLi);
+		}
+	}
+	</script>
+</html>
