@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<ul id="edit" contenteditable="true">
+    <li>修改我吧，然后刷新页面看看，^_^</li>
+	<input type="password" id="phone"  />
+	<button id="commit">提交</button>
+	</ul>
+
+	</body>
+	<script>
+	
+	
+	var edit = document.getElementById("commit");
+	var phone = document.getElementById('phone');
+edit.onclick = function(){
+    localStorage.setItem("tododata", phone.value);
+};
+if(localStorage.getItem("tododata")){
+    phone.value = localStorage.getItem("tododata");	
+}
+	</script>
+</html>

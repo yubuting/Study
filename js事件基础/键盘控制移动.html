@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+	#div1 {width:100px; height:100px; background:#CCC; position:absolute;}
+	</style>
+	<body>
+		<div id="div1">
+			
+		</div>
+	</body>
+	<script>
+	var div = document.getElementById('div1');
+		document.onkeydown = function(ev){
+			var oEvent = ev||event;
+			if(oEvent.keyCode==37){
+				div.style.left = div.offsetLeft-10+'px';
+			}else if(oEvent.keyCode==39){
+				div.style.left = div.offsetLeft+10+'px';
+			}
+		}
+	</script>
+</html>
